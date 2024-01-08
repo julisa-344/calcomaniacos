@@ -2,9 +2,10 @@
   <v-container class="bg-color m-height m-width relative">
     <v-img
       :src="require('../assets/rbm.svg')"
-      class="white--text align-start"
-      height="400"
+      class="absolute top-0 right-0"
+      height="300"
     />
+
     <v-img
       :src="require('../assets/rb.svg')"
       class="white--text align-end"
