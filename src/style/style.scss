@@ -11,6 +11,15 @@ $dark-color: #343a40;
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  font-size: 62.5%;
+}
+h1{
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 4rem;
+  color: $light-color;
+}
+
 .bg-color {
   background-color: $primary-color;
 }
@@ -25,4 +34,43 @@ $dark-color: #343a40;
 }
 .relative{
   position: relative;
+}
+.p-1 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
 }

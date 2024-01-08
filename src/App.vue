@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <HeaderComponents/>
     <v-main>
       <HeroBanner/>
       <v-container>
@@ -12,7 +13,7 @@
 
 <script>
 import HeroBanner from './components/HeroBanner.vue'
-import CardGrid from './components/CardGrid.vue'
+import HeaderComponents from './components/HeaderComponents.vue'import CardGrid from './components/CardGrid.vue'
 import MainCanvas from './components/MainCanvas.vue'
 
 export default {
@@ -20,6 +21,7 @@ export default {
 
   components: {
     HeroBanner,
+    HeaderComponents,
     CardGrid,
     MainCanvas
   },
