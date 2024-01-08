@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <HeaderComponents/>
     <v-main>
       <HeroBanner/>
     </v-main>
@@ -8,12 +9,13 @@
 
 <script>
 import HeroBanner from './components/HeroBanner.vue'
-
+import HeaderComponents from './components/HeaderComponents.vue'
 export default {
   name: 'App',
 
   components: {
     HeroBanner,
+    HeaderComponents,
   },
 
   data: () => ({
