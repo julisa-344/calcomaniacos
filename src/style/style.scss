@@ -1,0 +1,28 @@
+$primary-color: #7A11F9;
+$secondary-color: #FEBC1C;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$info-color: #17a2b8;
+$warning-color: #ffc107;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bg-color {
+  background-color: $primary-color;
+}
+.m-height {
+  min-height: 100vh;
+}
+.m-width {
+  max-width: 100%;
+}
+.flex{
+  display: flex;
+}
+.relative{
+  position: relative;
+}

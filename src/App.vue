@@ -1,19 +1,19 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld/>
+      <HeroBanner/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeroBanner from './components/HeroBanner.vue'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    HeroBanner,
   },
 
   data: () => ({
@@ -21,3 +21,4 @@ export default {
   }),
 }
 </script>
+<style lang="scss" src="./style/style.scss"></style>
