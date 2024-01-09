@@ -1,4 +1,5 @@
 <template>
+    <h2>Crea tu colleción</h2>
     <v-container class="flex bg-color m-width m-height p-4">
         <MainCanvas :cards="selectedCards"/>
         <CardGrid v-on:card-dragged="addCardToCanvas"/>

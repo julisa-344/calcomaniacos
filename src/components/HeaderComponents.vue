@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .header {
     display: flex;
     justify-content: space-between;
@@ -30,9 +30,11 @@ export default {
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: #fa9c09;
+    background-color: #7A11F9;
+    border-bottom: 1px solid #fff;
     padding: 0 1rem;
     z-index: 100;
+    color: #fff;
 }
 
 .header-title {

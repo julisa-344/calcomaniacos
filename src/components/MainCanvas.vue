@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 .main-canvas {
-  width: 400px;
+  width: 600px;
   height: 80vh;
   background-color: #f5f5f5;
   border: 1px solid #ccc;

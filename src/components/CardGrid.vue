@@ -1,23 +1,21 @@
 <template>
-  <v-card
-    v-for="(card, index) in cards"
-    :key="index"
-    draggable="true"
-    @dragStop="dragStart(card)"
-  >
-    <v-img :src="card.image" class="card-image"></v-img>
-  </v-card>
+  <v-container class="container-stickers">
+    <div class="cards-wrapper">
+      <v-card v-for="(card, index) in cards" :key="index" draggable="true" @dragStart="dragStart(card)"
+        class="cards-stickers">
+        <v-img :src="card.src" class="card-image"></v-img>
+      </v-card>
+    </div>
+  </v-container>
 </template>
 
 <script>
+import data from '../data.js';
+
 export default {
   data() {
     return {
-      cards: [
-        { image: require('../assets/cat.png') },
-        { image: require('../assets/dog.png') },
-        // add more cards as needed
-      ],
+      cards: data,
     };
   },
   methods: {
@@ -30,8 +28,27 @@ export default {
 </script>
 
 <style scoped>
+.container-stickers {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards-stickers {
+  background-color: transparent;
+  cursor: pointer;
+}
 .card-image {
-  width: 250px;
-  height: 250px;
+
+  width: 200px;
+  height: auto;
 }
 </style>
