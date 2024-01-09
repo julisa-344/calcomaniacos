@@ -18,7 +18,6 @@ export default {
 .button-vuetify {
    background-color: #fff;
    color: #000;
-   padding: 1rem 2rem;
    box-sizing: border-box;
 }
 </style>

@@ -1,10 +1,14 @@
 <template>
     <header class="header">
-        <h2 class="header-title">Calcomaniacos</h2>
+        <div class="flex align-center">
+            <h2 class="header-title">Calcomaniacos</h2>
+        </div>
         <nav class="header-nav">
             <ul>
                 <li><a href="#">Crear tu colección</a></li>
                 <li><a href="#">Comprar stickers</a></li>
+                <li><a href="#">Galeria</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -20,12 +24,14 @@ export default {
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 70px;
     background-color: #fa9c09;
-    padding: 20px;
+    padding: 0 1rem;
     z-index: 100;
 }
 

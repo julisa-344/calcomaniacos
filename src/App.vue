@@ -3,18 +3,15 @@
     <HeaderComponents/>
     <v-main>
       <HeroBanner/>
-      <v-container>
-          <CardGrid v-on:card-dragged="addCardToCanvas"/>
-          <MainCanvas :cards="selectedCards"/>
-      </v-container>
+      <MakeCollection/>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import HeroBanner from './components/HeroBanner.vue'
-import HeaderComponents from './components/HeaderComponents.vue'import CardGrid from './components/CardGrid.vue'
-import MainCanvas from './components/MainCanvas.vue'
+import HeaderComponents from './components/HeaderComponents.vue'
+import MakeCollection from './components/MakeCollection.vue'
 
 export default {
   name: 'App',
@@ -22,8 +19,7 @@ export default {
   components: {
     HeroBanner,
     HeaderComponents,
-    CardGrid,
-    MainCanvas
+    MakeCollection
   },
 
   data() {

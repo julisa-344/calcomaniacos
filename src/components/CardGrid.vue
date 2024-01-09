@@ -14,8 +14,8 @@ export default {
   data() {
     return {
       cards: [
-        { image: require('../assets/stickers/sticker1.png') },
-        { image: require('../assets/stickers/sticker2.jpg') },
+        { image: require('../assets/cat.png') },
+        { image: require('../assets/dog.png') },
         // add more cards as needed
       ],
     };

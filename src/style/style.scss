@@ -21,7 +21,8 @@ h1{
 }
 
 .bg-color {
-  background-color: $primary-color;
+  background: rgb(122,17,249);
+  background: linear-gradient(188deg, rgba(122,17,249,1) 0%, rgba(81,31,141,1) 100%);
 }
 .m-height {
   min-height: 100vh;
@@ -32,6 +33,22 @@ h1{
 .flex{
   display: flex;
 }
+.align-center{
+  align-items: center;
+}
+.justify-center{
+  justify-content: center;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.text-center{
+  text-align: center;
+}
+
 .relative{
   position: relative;
 }

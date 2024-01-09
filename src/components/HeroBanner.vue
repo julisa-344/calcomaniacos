@@ -6,12 +6,7 @@
       </div>
       <v-row class="text-center">
         <v-col cols="12">
-          <v-img
-            :src="require('../assets/logo.png')"
-            class="my-3"
-            contain
-            height="200"
-          />
+          <img class="logo-img" :src="require('../assets/logo.png')" alt="logo">
         </v-col>
 
         <v-col class="mb-4">
@@ -41,6 +36,11 @@ export default {
 }
 </script>
 <style>
+.logo-img{
+  width: 256px;
+  margin-bottom: -5rem;
+  margin-top: 2rem;
+}
 .bg-rainbow{
   background-image: url('../assets/rbm.svg');
   background-repeat: no-repeat;
