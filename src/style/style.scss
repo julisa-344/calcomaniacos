@@ -19,6 +19,12 @@ h1{
   font-size: 4rem;
   color: $light-color;
 }
+.sub-title{
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 2rem;
+  color: $light-color;
+
+}
 
 .bg-color {
   background: rgb(122,17,249);
@@ -27,8 +33,11 @@ h1{
 .m-height {
   min-height: 100vh;
 }
+.max-height{
+  height: calc(100vh - 70px);
+}
 .m-width {
-  max-width: 100vw;
+  min-width: 100vw;
 }
 .flex{
   display: flex;
@@ -51,6 +60,10 @@ h1{
 
 .relative{
   position: relative;
+}
+.p-0{
+  padding: 0px;
+
 }
 .p-1 {
   padding: 1rem;

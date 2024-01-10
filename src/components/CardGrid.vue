@@ -30,7 +30,7 @@ export default {
 <style scoped>
 .container-stickers {
   width: 100%;
-  height: 80vh;
+  height: 75vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -47,7 +47,6 @@ export default {
   cursor: pointer;
 }
 .card-image {
-
   width: 200px;
   height: auto;
 }
