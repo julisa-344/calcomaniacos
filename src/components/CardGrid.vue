@@ -1,4 +1,5 @@
 <template>
+  <FilterSelect/>
   <v-container class="container-stickers">
     <div class="cards-wrapper">
       <v-card v-for="(card, index) in cards" :key="index" draggable="true" @dragStart="dragStart(card)"
@@ -11,8 +12,12 @@
 
 <script>
 import data from '../data.js';
+import FilterSelect from '@/components/shared/filterSelect.vue';
 
 export default {
+  components: {
+      FilterSelect,
+    },
   data() {
     return {
       cards: data,
@@ -20,9 +25,15 @@ export default {
   },
   methods: {
     dragStart(event, card) {
-    event.dataTransfer.setData('card-id', card.id);
+  // Verificar que card es un objeto válido
+  if (card && typeof card === 'object') {
+    // Convertir el objeto card a una cadena JSON
+    event.dataTransfer.setData('card', JSON.stringify(card));
     this.$emit('cardDragged', card);
-  },
+  } else {
+    console.error('Invalid card:', card);
+  }
+},
   },
   emits: ['cardDragged'],
 };
@@ -37,7 +48,6 @@ export default {
   justify-content: center;
   overflow-y: scroll;
 }
-
 .cards-wrapper {
   display: flex;
   flex-wrap: wrap;

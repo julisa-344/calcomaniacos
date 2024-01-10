@@ -1,5 +1,5 @@
 <template>
-    <v-btn class="button-vuetify m-2" color="white">{{ buttonText }}</v-btn>
+    <v-btn class="button-vuetify m-2" color="white" :href="src">{{ buttonText }}</v-btn>
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
         buttonText: {
             type: String,
             required: true
+        },
+        src: {
+            type: String,
+            required: false
         }
     }
 }
@@ -19,5 +23,6 @@ export default {
    background-color: #fff;
    color: #000;
    box-sizing: border-box;
+   cursor: pointer;
 }
 </style>

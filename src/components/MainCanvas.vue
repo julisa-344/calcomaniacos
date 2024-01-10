@@ -12,7 +12,7 @@
     </v-card>
   </div>
 </template>
-w
+
 <script>
 export default {
   props: {
@@ -23,8 +23,10 @@ export default {
   },
   methods: {
     handleDrop(event) {
-      const cardId = event.dataTransfer.getData('card-id');
-      this.$emit('add-card', cardId);
+      // Obtener los datos transferidos y convertirlos de nuevo a un objeto
+      const card = JSON.parse(event.dataTransfer.getData('card'));
+      // Emitir un evento al componente padre con la nueva tarjeta
+      this.$emit('add-card', card);
     },
   },
 };

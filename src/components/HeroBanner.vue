@@ -14,11 +14,8 @@
         <p class="subheading font-weight-regular">
           Locos por los stickers
         </p>
-        <ButtonClassic buttonText="Crear tu colección" />
+        <ButtonClassic buttonText="Crear tu colección" src="#makeCollection"/>
         <br>
-        <!-- <video class="video-loop arrow-video" loop autoplay>
-          <source :src="require('../assets/arrow2.mp4')" type="video/mp4">
-        </video> -->
       </v-col>
     </v-row>
   </v-container>
