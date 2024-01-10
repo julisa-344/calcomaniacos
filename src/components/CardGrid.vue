@@ -19,9 +19,10 @@ export default {
     };
   },
   methods: {
-    dragStart(card) {
-      this.$emit('cardDragged', card);
-    },
+    dragStart(event, card) {
+    event.dataTransfer.setData('card-id', card.id);
+    this.$emit('cardDragged', card);
+  },
   },
   emits: ['cardDragged'],
 };

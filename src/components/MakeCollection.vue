@@ -14,10 +14,8 @@ import MainCanvas from './MainCanvas.vue';
 export default {
   components: { CardGrid, MainCanvas },
     name: 'MakeCollection',
-    // Opciones del componente aquí
 }
 </script>
 
 <style scoped>
-/* Estilos del componente aquí */
 </style>

@@ -23,11 +23,8 @@ export default {
   },
   methods: {
     handleDrop(event) {
-      console.log(event);
       const cardId = event.dataTransfer.getData('card-id');
-      // Emit an event to notify the parent component to add the card to the cards array
       this.$emit('add-card', cardId);
-      console.log('wishuwishu', cardId);
     },
   },
 };
