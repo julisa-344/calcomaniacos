@@ -11,6 +11,7 @@
 
 <script>
 import data from '../data.js';
+import FilterSelect from '@/components/shared/FilterSelect.vue';
 
 export default {
   components: {
