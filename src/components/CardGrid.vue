@@ -1,5 +1,4 @@
 <template>
-  <FilterSelect/>
   <v-container class="container-stickers">
     <div class="cards-wrapper">
       <v-card v-for="(card, index) in cards" :key="index" draggable="true" @dragStart="dragStart(card)"
@@ -12,11 +11,9 @@
 
 <script>
 import data from '../data.js';
-import FilterSelect from '@/components/shared/filterSelect.vue';
 
 export default {
   components: {
-      FilterSelect,
     },
   data() {
     return {
