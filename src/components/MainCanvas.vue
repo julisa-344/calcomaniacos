@@ -7,14 +7,18 @@
     <v-card
       v-for="(card, index) in cards"
       :key="index"
+      :style="{ top: card.y + 'px', left: card.x + 'px' }"
+      draggable="true"
+      @dragstart="handleDragStart(index, $event)"
+      @dragend="handleDragEnd"
     >
-      <v-img :src="card.image" class="card-image"></v-img>
+      <v-img :src="card.src" class="card-image"></v-img>
+      <p>{{ card.src }}</p>
     </v-card>
   </div>
 </template>
 
 <script>
-
 export default {
   props: {
     cards: {
@@ -28,11 +32,23 @@ export default {
   },
   methods: {
     handleDrop(event) {
-      // Obtener los datos transferidos y convertirlos de nuevo a un objeto
       const card = JSON.parse(event.dataTransfer.getData('card') ? event.dataTransfer.getData('card') : null);
-      // Emitir un evento al componente padre con la nueva tarjeta
-      console.log('handleDrop: CARD', card);
       this.onAddCard(card);
+    },
+    handleDragStart(index, event) {
+      event.dataTransfer.setData('text/plain', index);
+    },
+    handleDragEnd() {
+      // Update the card positions after dragging
+      const updatedCards = this.cards.map((card, index) => {
+        const draggableCard = event.target;
+        if (draggableCard.style.top && draggableCard.style.left) {
+          card.x = parseInt(draggableCard.style.left);
+          card.y = parseInt(draggableCard.style.top);
+        }
+        return card;
+      });
+      this.onUpdateCards(updatedCards);
     },
   },
 };
@@ -47,5 +63,9 @@ export default {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 20px;
+}
+
+.v-card {
+  position: absolute;
 }
 </style>

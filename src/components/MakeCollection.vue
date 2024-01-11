@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     addCard(card) {
-      console.log('addCard: CARD', card);
+      console.log('addCard: CARDAAS', this.cards);
       // Verificar que card es un objeto válido
       if (card && typeof card === 'object') {
         this.cards.push(card);
