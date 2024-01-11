@@ -14,19 +14,25 @@
 </template>
 
 <script>
+
 export default {
   props: {
     cards: {
       type: Array,
       default: () => [],
     },
+    onAddCard: {
+      type: Function,
+      required: true,
+    },
   },
   methods: {
     handleDrop(event) {
       // Obtener los datos transferidos y convertirlos de nuevo a un objeto
-      const card = JSON.parse(event.dataTransfer.getData('card'));
+      const card = JSON.parse(event.dataTransfer.getData('card') ? event.dataTransfer.getData('card') : null);
       // Emitir un evento al componente padre con la nueva tarjeta
-      this.$emit('add-card', card);
+      console.log('handleDrop: CARD', card);
+      this.onAddCard(card);
     },
   },
 };

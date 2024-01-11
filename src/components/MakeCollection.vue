@@ -3,7 +3,7 @@
         <h2 class="text-center sub-title">Crea tu colleción</h2>
             <FilterSelect/>
         <v-container class="flex">
-            <MainCanvas :cards="cards" @add-card="addCard"/>
+            <MainCanvas :cards="cards" :onAddCard="addCard"/>
             <CardGrid v-on:card-dragged="addCardToCanvas"/>
         </v-container>
     </v-container>
@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     addCard(card) {
+      console.log('addCard: CARD', card);
       // Verificar que card es un objeto válido
       if (card && typeof card === 'object') {
         this.cards.push(card);
@@ -32,6 +33,7 @@ export default {
       }
     },
     addCardToCanvas(card) {
+      console.log('addCardToCanvas: CARD', card);
     // Verificar que card es un objeto válido
     if (card && typeof card === 'object') {
       this.canvasCards.push(card);
