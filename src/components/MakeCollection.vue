@@ -39,6 +39,9 @@ export default {
       console.error('Invalid card:', card);
     }
   },
+  onUpdateCards(updatedCards) {
+      this.cards = updatedCards;
+    },
   },
 };
 </script>

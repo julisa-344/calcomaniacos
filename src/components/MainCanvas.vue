@@ -4,17 +4,17 @@
     @dragover.prevent
     @drop="handleDrop"
   >
-    <v-card
-      v-for="(card, index) in cards"
-      :key="index"
-      :style="{ top: card.y + 'px', left: card.x + 'px' }"
-      draggable="true"
-      @dragstart="handleDragStart(index, $event)"
-      @dragend="handleDragEnd"
-    >
-      <v-img :src="card.src" class="card-image"></v-img>
-      <p>{{ card.src }}</p>
-    </v-card>
+  <v-card
+    v-for="(card, index) in cards"
+    :key="index"
+    :style="{ top: card.y + 'px', left: card.x + 'px' }"
+    draggable="true"
+    @dragstart="handleDragStart(index, $event)"
+    @dragend="handleDragEnd"
+  >
+    <v-img :src="card.src" class="card-image"></v-img>
+    <p>{{ card.src }}</p>
+  </v-card>
   </div>
 </template>
 
@@ -38,17 +38,17 @@ export default {
     handleDragStart(index, event) {
       event.dataTransfer.setData('text/plain', index);
     },
-    handleDragEnd() {
+    handleDragEnd(event) {
       // Update the card positions after dragging
+      const draggableCard = event.target;
       const updatedCards = this.cards.map((card) => {
-        const draggableCard = event.target;
         if (draggableCard.style.top && draggableCard.style.left) {
           card.x = parseInt(draggableCard.style.left);
           card.y = parseInt(draggableCard.style.top);
         }
         return card;
       });
-      this.onUpdateCards(updatedCards);
+      this.$emit('updateCards', updatedCards);
     },
   },
 };
