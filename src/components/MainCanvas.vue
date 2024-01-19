@@ -40,7 +40,7 @@ export default {
     },
     handleDragEnd() {
       // Update the card positions after dragging
-      const updatedCards = this.cards.map((card, index) => {
+      const updatedCards = this.cards.map((card) => {
         const draggableCard = event.target;
         if (draggableCard.style.top && draggableCard.style.left) {
           card.x = parseInt(draggableCard.style.left);

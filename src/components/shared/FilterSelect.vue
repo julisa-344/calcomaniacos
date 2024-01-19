@@ -1,54 +1,43 @@
 <template>
-    <div>
-        <select v-model="selectedOption" class="select">
-            <option v-for="option in options" :value="option.value" :key="option.value">{{ option.label }}</option>
-        </select>
-    </div>
+  <div>
+    <select v-model="selectedCategory" @change="filterByCategory">
+      <option value="">All</option>
+      <option v-for="category in categories" :value="category" :key="category">
+        {{ category }}
+      </option>
+    </select>
+  </div>
 </template>
 
 <script>
-import data from '@/data.js';
-
 export default {
-    name: 'FilterSelect',
-    data() {
-        return {
-            selectedOption: null,
-            options: [
-                { label: 'ricky and morty', value: 'rickyMorty' },
-                { label: 'arctic monkey', value: 'artickMonkeys' },
-                { label: 'anime', value: 'anime' },
-                { label: 'messi', value: 'messi' },
-                { label: 'memes', value: 'memes' },
-            ],
-            images: data,
-        };
+  data() {
+    return {
+      selectedCategory: "",
+      categories: [
+        "ricky and morty",
+        "arctic monkey",
+        "anime",
+        "messi ",
+        "memes",
+      ],
+    };
+  },
+  methods: {
+    filterByCategory() {
+      this.$emit("categorySelected", this.selectedCategory);
     },
-    computed: {
-        filteredImages() {
-            if (this.selectedOption) {
-                return this.images.filter(image => image.categoria === this.selectedOption);
-            }
-            return this.images;
-        },
-    },
+  },
 };
 </script>
-
 <style>
-.select {
-    background-color: rgb(188, 188, 188);
-}
-
-.image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.image-container img {
-    width: 200px;
-    height: 200px;
-    margin: 10px;
+select {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 </style>
